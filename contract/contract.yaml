@@ -1,0 +1,104 @@
+openapi: 3.0.3
+info:
+  title: Shop-Service
+  description: |-
+    API Rest for a Simple Shop Service.
+  termsOfService: http://swagger.io/terms/
+  contact:
+    name: Francisco Villegas Ostos
+    email: francisco.villegasos.developer@gmail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.11
+tags:
+  - name: product
+    description: API for the manage of the products.
+paths:
+  /product/price:
+    get:
+      tags:
+        - product
+      summary: Retrieve a the price related to a product.
+      description: Retrieve a the price related to a product for a specific period of time using different filters (date of the application, product id, etc.).
+      operationId: getProductPrice
+      parameters:
+        - name: productId
+          in: query
+          description: Identifier of the product related to a price.
+          required: true
+          schema:
+            type: number
+            format: integer
+            minimum: 1
+            maximum: 999999
+        - name: applicationDate
+          in: query
+          description: Date of the application for a specific price.
+          required: true
+          schema:
+            type: string
+            format: date-time
+        - name: brandId
+          in: query
+          description: Identifier of the brand where the product related to a price belongs to.
+          required: true
+          schema:
+            type: number
+            format: integer
+            minimum: 1
+            maximum: 999999
+      responses:
+        '200':
+          description: Ok.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductPriceInfo'
+        '400':
+          description: Bad Request. There was an error processing the input data.
+        '404':
+          description: Not found. Prices could not be found for the given filters.
+        '500':
+          description: Internal Server Error. Generic and unexpected error of the microservice.
+components:
+  schemas:
+    ProductPriceInfo:
+      type: object
+      properties:
+        productId:
+          description: Identifier of the product.
+          type: number
+          format: integer
+          minimum: 1
+          maximum: 999999
+          example: 35455
+        brandId:
+          description: Identifier of the brand related to a product.
+          type: number
+          format: integer
+          minimum: 1
+          maximum: 999999
+          example: 1
+        fee:
+          description: Fee applied to the price of the product.
+          type: number
+          format: integer
+          minimum: 1
+          maximum: 999999
+          example: 4
+        startDate:
+          description: Start date of the application of the price.
+          type: string
+          format: date-time
+          example: "2017-07-21T17:32:28Z"
+        endDate:
+          description: End date of the application of the price.
+          type: string
+          format: date-time
+          example: "2017-07-24T17:32:28Z"
+        price:
+          description: Price assigned to a product for a period of time.
+          type: number
+          format: double
+          example: 34.99
