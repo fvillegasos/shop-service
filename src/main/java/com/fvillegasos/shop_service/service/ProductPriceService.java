@@ -1,6 +1,7 @@
-package com.prueba.zara.fvillegasos.PruebaTecnicaZara.service;
+package com.fvillegasos.shop_service.service;
 
-import com.prueba.zara.fvillegasos.PruebaTecnicaZara.model.ProductPriceInfo;
+
+import com.fvillegasos.shopservice.model.ProductPriceInfo;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
