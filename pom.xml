@@ -107,8 +107,8 @@
 								${project.basedir}/contract/contract.yaml
 							</inputSpec>
 							<generatorName>spring</generatorName>
-							<apiPackage>com.fvillegasos.shop_service.api</apiPackage>
-							<modelPackage>com.fvillegasos.shop_service.model</modelPackage>
+							<apiPackage>com.fvillegasos.shopservice.api</apiPackage>
+							<modelPackage>com.fvillegasos.shopservice.model</modelPackage>
 							<configOptions>
 								<openApiNullable>false</openApiNullable>
 								<interfaceOnly>true</interfaceOnly>
