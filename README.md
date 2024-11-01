@@ -1,11 +1,11 @@
 # shop-service
 
-Simple Shop Service API using Java 21, Spring and OpenAPI 3.0.
+Simple Shop Service API using Java 21, Spring, OpenAPI 3 and H2 database.
 
 ### Dependency usage:
 
 * MapStruct for easy mappings between domain and entities (https://www.baeldung.com/mapstruct)
-* OpenAPI 3.0 for creation of the domain clases for the API (https://swagger.io/specification/).
+* OpenAPI 3 for creation of the domain clases for the API (https://swagger.io/specification/).
 * H2 Database for embedded database (https://www.h2database.com/html/main.html).
 
 ### Contact information:
