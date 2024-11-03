@@ -99,7 +99,7 @@ class ShopServiceApplicationTests {
 	}
 
 	private String getHostAndEndpoint() {
-		return "http://localhost:" + port + "/product/price?productId={productId}&brandId={brandId}&applicationDate={applicationDate}";
+		return "http://localhost:" + port + "/products/prices?productId={productId}&brandId={brandId}&applicationDate={applicationDate}";
 	}
 
 	private HttpEntity<?> getHttpEntity() {

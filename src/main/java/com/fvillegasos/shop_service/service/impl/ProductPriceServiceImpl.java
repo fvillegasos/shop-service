@@ -7,6 +7,7 @@ import com.fvillegasos.shop_service.repository.ProductPriceRepository;
 import com.fvillegasos.shop_service.service.ProductPriceService;
 import com.fvillegasos.shopservice.model.ProductPriceInfo;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
@@ -23,6 +24,7 @@ public class ProductPriceServiceImpl implements ProductPriceService {
     }
 
     @Override
+    @Transactional(readOnly = true)
     public ProductPriceInfo getProductPriceInfo(BigDecimal productId, BigDecimal brandId, OffsetDateTime applicationDate) {
         var optProductPrice = repository.findPriorityProductPriceByFilters(productId.longValue(),
                 brandId.longValue(), applicationDate.toLocalDateTime());
