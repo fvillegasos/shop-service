@@ -15,7 +15,7 @@ tags:
   - name: product
     description: API for the manage of the products.
 paths:
-  /product/price:
+  /products/prices:
     get:
       tags:
         - product
